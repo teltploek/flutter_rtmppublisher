@@ -575,14 +575,17 @@ class CameraController extends ValueNotifier<CameraValue> {
       return StreamStatistics(
         sentAudioFrames:
             data!["sentAudioFrames"] != null ? data["sentAudioFrames"] : 0,
-        sentVideoFrames: data["sentVideoFrames"],
-        height: data["height"],
-        width: data["width"],
-        bitrate: data["bitrate"],
-        isAudioMuted: data["isAudioMuted"],
-        cacheSize: data["cacheSize"],
-        droppedAudioFrames: data["drpppedAudioFrames"],
-        droppedVideoFrames: data["droppedVideoFrames"],
+        sentVideoFrames:
+            data["sentVideoFrames"] != null ? data["sentVideoFrames"] : 0,
+        height: data["height"] != null ? data["height"] : 0,
+        width: data["width"] != null ? data["width"] : 0,
+        bitrate: data["bitrate"] != null ? data["bitrate"] : 0,
+        isAudioMuted: data["isAudioMuted"] != null ? data["isAudioMuted"] : 0,
+        cacheSize: data["cacheSize"] != null ? data["cacheSize"] : 0,
+        droppedAudioFrames:
+            data["drpppedAudioFrames"] != null ? data["drpppedAudioFrames"] : 0,
+        droppedVideoFrames:
+            data["droppedVideoFrames"] != null ? data["droppedVideoFrames"] : 0,
       );
     } on PlatformException catch (e) {
       throw CameraException(e.code, e.message.toString());
