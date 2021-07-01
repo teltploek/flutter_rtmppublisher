@@ -580,7 +580,7 @@ class CameraController extends ValueNotifier<CameraValue> {
         height: data["height"] != null ? data["height"] : 0,
         width: data["width"] != null ? data["width"] : 0,
         bitrate: data["bitrate"] != null ? data["bitrate"] : 0,
-        isAudioMuted: data["isAudioMuted"] != null ? data["isAudioMuted"] : 0,
+        isAudioMuted: data["isAudioMuted"],
         cacheSize: data["cacheSize"] != null ? data["cacheSize"] : 0,
         droppedAudioFrames:
             data["drpppedAudioFrames"] != null ? data["drpppedAudioFrames"] : 0,
