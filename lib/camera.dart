@@ -573,7 +573,8 @@ class CameraController extends ValueNotifier<CameraValue> {
       var data = await _channel
           .invokeMapMethod<String, dynamic>('getStreamStatistics');
       return StreamStatistics(
-        sentAudioFrames: data!["sentAudioFrames"] ? data["sentAudioFrames"] : 0,
+        sentAudioFrames:
+            data!["sentAudioFrames"] != null ? data["sentAudioFrames"] : 0,
         sentVideoFrames: data["sentVideoFrames"],
         height: data["height"],
         width: data["width"],
