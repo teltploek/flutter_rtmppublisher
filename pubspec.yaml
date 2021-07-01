@@ -3,9 +3,12 @@ description: Controlling the camera on Android and iOS plus rtmp live streaming 
 version: 0.3.2
 homepage: https://github.com/pinkfish/flutter_rtmppublisher
 
+analyzer:
+  enable-experiment:
+    - non-nullable
+
 environment:
-  sdk: ">=2.7.0 <3.0.0"
-  flutter: ">=1.10.0"
+  sdk: ">=2.13.0-68.0.dev <3.0.0"
 
 dependencies:
   flutter:
