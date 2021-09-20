@@ -8,7 +8,6 @@ import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:event_bus/event_bus.dart';
 
 part 'camera_image.dart';
 
@@ -16,8 +15,6 @@ final MethodChannel _channel =
     const MethodChannel('plugins.flutter.io/camera_with_rtmp');
 
 enum CameraLensDirection { front, back, external }
-
-EventBus eventBus = EventBus();
 
 /// Affect the quality of video recording and image capture:
 ///
@@ -414,7 +411,7 @@ class CameraController extends ValueNotifier<CameraValue> {
       return;
     }
 
-    print("BrianEvent $map");
+    print("Event $map");
     switch (map['eventType']) {
       case 'error':
         value = value.copyWith(errorDescription: event['errorDescription']);
@@ -435,8 +432,6 @@ class CameraController extends ValueNotifier<CameraValue> {
             previewQuarterTurns: int.parse(event['errorDescription']));
         break;
     }
-
-    eventBus.fire(event);
   }
 
   /// Captures an image and saves it to [path].
