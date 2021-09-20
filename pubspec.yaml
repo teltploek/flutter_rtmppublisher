@@ -13,6 +13,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  event_bus: ^2.0.0
 
 dev_dependencies:
   path_provider: ^1.6.9
