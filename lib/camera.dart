@@ -414,7 +414,7 @@ class CameraController extends ValueNotifier<CameraValue> {
       return;
     }
 
-    print("Event $map");
+    print("BrianEvent $map");
     switch (map['eventType']) {
       case 'error':
         value = value.copyWith(errorDescription: event['errorDescription']);
