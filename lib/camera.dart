@@ -90,6 +90,7 @@ Future<List<CameraDescription>> availableCameras() async {
       );
     }).toList();
   } on PlatformException catch (e) {
+    print(e);
     throw CameraException(e.code, e.message.toString());
   }
 }
