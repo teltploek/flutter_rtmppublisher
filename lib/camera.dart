@@ -369,6 +369,11 @@ class CameraController extends ValueNotifier<CameraValue> {
     } on PlatformException catch (e) {
       throw CameraException(e.code, e.message.toString());
     }
+
+    try {
+      await _eventSubscription.cancel();
+    } catch (e) {}
+
     _eventSubscription = EventChannel(
             'plugins.flutter.io/camera_with_rtmp/cameraEvents$_textureId')
         .receiveBroadcastStream()
