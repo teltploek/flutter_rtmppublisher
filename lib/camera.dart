@@ -406,9 +406,6 @@ class CameraController extends ValueNotifier<CameraValue> {
   ///
   /// A "cameraClosing" event is sent when the camera is closed automatically by the system (for example when the app go to background). The plugin will try to reopen the camera automatically but any ongoing recording will end.
   void _listener(dynamic event) {
-    print('listener');
-    print(event);
-
     final Map<dynamic, dynamic> map = event;
     if (_isDisposed) {
       return;
