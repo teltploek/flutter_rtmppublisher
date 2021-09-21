@@ -340,6 +340,7 @@ class CameraController extends ValueNotifier<CameraValue> {
   ///
   /// Throws a [CameraException] if the initialization fails.
   Future<void> initialize() async {
+    print('hi from rtmp lib');
     if (_isDisposed) {
       return Future<void>.value();
     }
