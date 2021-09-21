@@ -426,6 +426,8 @@ class CameraController extends ValueNotifier<CameraValue> {
         break;
       case 'rtmp_connected':
         break;
+      case 'rtmp_failed':
+        break;
       case 'rtmp_retry':
         break;
       case 'rtmp_stopped':
