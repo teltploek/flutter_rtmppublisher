@@ -332,6 +332,10 @@ class CameraController extends ValueNotifier<CameraValue> {
   late Completer<void> _creatingCompleter;
   final bool androidUseOpenGL;
 
+  get textureId {
+    return _textureId;
+  }
+
   /// Initializes the camera on the device.
   ///
   /// Throws a [CameraException] if the initialization fails.
