@@ -1,6 +1,6 @@
 name: camera_with_rtmp
 description: Controlling the camera on Android and iOS plus rtmp live streaming support. Based off the Camera plugin.
-version: 0.3.3
+version: 0.3.4
 homepage: https://github.com/pinkfish/flutter_rtmppublisher
 
 analyzer:
@@ -22,6 +22,7 @@ dev_dependencies:
   flutter_driver:
     sdk: flutter
   pedantic: ^1.8.0+1
+  event_bus: ^2.0.0
 
 # The following section is specific to Flutter.
 flutter:
