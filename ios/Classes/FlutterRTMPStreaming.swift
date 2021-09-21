@@ -88,6 +88,9 @@ public class FlutterRTMPStreaming : NSObject {
             retries = 0
             eventSink(["event" : "rtmp_connected"]);
             break
+        case RTMPConnection.Code.connectAppshutdown.rawValue:
+            eventSink(["event" : "rtmp_shutdown"]);
+            break
         case RTMPConnection.Code.connectClosed.rawValue:
             eventSink(["event" : "rtmp_stopped"]);
             break
