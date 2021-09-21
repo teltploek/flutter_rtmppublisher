@@ -86,6 +86,7 @@ public class FlutterRTMPStreaming : NSObject {
         case RTMPConnection.Code.connectSuccess.rawValue:
             rtmpStream.publish(name)
             retries = 0
+            eventSink(["event" : "rtmp_connected"]);
             break
         case RTMPConnection.Code.connectFailed.rawValue, RTMPConnection.Code.connectClosed.rawValue:
             guard retries <= 3 else {
