@@ -332,10 +332,6 @@ class CameraController extends ValueNotifier<CameraValue> {
   late Completer<void> _creatingCompleter;
   final bool androidUseOpenGL;
 
-  get textureId {
-    return _textureId;
-  }
-
   /// Initializes the camera on the device.
   ///
   /// Throws a [CameraException] if the initialization fails.
@@ -410,6 +406,9 @@ class CameraController extends ValueNotifier<CameraValue> {
   ///
   /// A "cameraClosing" event is sent when the camera is closed automatically by the system (for example when the app go to background). The plugin will try to reopen the camera automatically but any ongoing recording will end.
   void _listener(dynamic event) {
+    print('listener');
+    print(event);
+
     final Map<dynamic, dynamic> map = event;
     if (_isDisposed) {
       return;
@@ -436,9 +435,6 @@ class CameraController extends ValueNotifier<CameraValue> {
             previewQuarterTurns: int.parse(event['errorDescription']));
         break;
     }
-
-    print('brian');
-    print(event);
   }
 
   /// Captures an image and saves it to [path].
